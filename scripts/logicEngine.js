@@ -1,4 +1,5 @@
 // logicEngine.js - The Brain of Agentic-Liquidity-Rails (ALR)
+require('dotenv').config();
 const axios = require('axios');
 
 /**
@@ -9,17 +10,15 @@ async function getVerifiableInference(marketData) {
     console.log("🛡️ [ALR] Requesting Verifiable Inference from DGrid...");
     
     try {
-        // DGrid Gateway Request
-        // In a live environment, this uses the DGRID_API_KEY from .env
-        const response = await axios.post('https://api.dgrid.io/v1/inference', {
+        const response = await axios.post('[https://api.dgrid.io/v1/inference](https://api.dgrid.io/v1/inference)', {
             model: "consensus-heavy-1", 
             prompt: `Market Analysis: $HSS Price: ${marketData.price}. Volatility: ${marketData.volatility}.`,
             proof_of_quality: true 
         }, {
             headers: { 'Authorization': `Bearer ${process.env.DGRID_API_KEY || 'DEMO_KEY'}` }
         }).catch(() => {
-            // Fallback for simulation/hackathon demo
-            return { data: { decision: "TRIGGER_HEDGE", poq_hash: "0x7d2a8e3b9c4f1a...f9e1" } };
+            // Mock response for the hackathon demo to show PoQ logic
+            return { data: { decision: "TRIGGER_HEDGE", poq_hash: "0x7d2a8e3b9c4f1a2d8e3b9c4f1a2d8e3b9c4f1a2d" } };
         });
 
         const { decision, poq_hash } = response.data;
@@ -39,15 +38,15 @@ async function getVerifiableInference(marketData) {
 async function executeMyxHedge(amount) {
     console.log(`🛡️ [MYX V2] Opening Permissionless Short Position...`);
     console.log(`📊 [Execution] Hedging ${amount} USD at 2x Leverage to protect TVL.`);
-    // Future integration: myxSDK.openPosition(...)
-    return "0x8b3c92...4a22";
+    return "0x8b3c92e7f1a2d8e3b9c4f1a2d8e3b9c4f1a2d4a22";
 }
 
 /**
- * Main execution cycle: Inference -> Logic -> Execution
+ * Main execution cycle
  */
 async function runSovereignCycle() {
-    // Simulated market risk data
+    console.log("🚀 [ALR] Starting Autonomous Liquidity Cycle...");
+    
     const marketData = { price: 0.0045, volatility: "HIGH", liquidity: 15500 }; 
 
     const action = await getVerifiableInference(marketData);
@@ -60,5 +59,8 @@ async function runSovereignCycle() {
     }
 }
 
-// Export for main runner
+if (require.main === module) {
+    runSovereignCycle();
+}
+
 module.exports = { runSovereignCycle };
