@@ -10,7 +10,7 @@ async function getVerifiableInference(marketData) {
     console.log("🛡️ [ALR] Requesting Verifiable Inference from DGrid...");
     
     try {
-        const response = await axios.post('[https://api.dgrid.io/v1/inference](https://api.dgrid.io/v1/inference)', {
+        const response = await axios.post('https://api.dgrid.io/v1/inference', {
             model: "consensus-heavy-1", 
             prompt: `Market Analysis: $HSS Price: ${marketData.price}. Volatility: ${marketData.volatility}.`,
             proof_of_quality: true 
