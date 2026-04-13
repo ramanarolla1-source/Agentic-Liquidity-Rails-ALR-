@@ -40,8 +40,8 @@ Node.js 20+
 BNB Chain Mainnet Account
 
 Installation
-git clone [https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails.git](https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails.git)
-cd Agentic-Liquidity-Rails
+git clone [https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails-ALR-.git](https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails-ALR-.git)
+cd Agentic-Liquidity-Rails-ALR-
 npm install
 Configure Environment
 Create a .env file:
