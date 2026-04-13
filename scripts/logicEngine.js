@@ -4,7 +4,6 @@ const axios = require('axios');
 
 /**
  * Requests Verifiable Inference from the DGrid AI Gateway.
- * Proof of Quality (PoQ) ensures the decision is decentralized and untampered.
  */
 async function getVerifiableInference(marketData) {
     console.log("🛡️ [ALR] Requesting Verifiable Inference from DGrid...");
@@ -59,6 +58,7 @@ async function runSovereignCycle() {
     }
 }
 
+// Automatically run if this file is called directly
 if (require.main === module) {
     runSovereignCycle();
 }
