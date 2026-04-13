@@ -14,21 +14,25 @@ ALR is built as a specialized DeFi extension of the **Horizon Sovereign Stack (H
 ## **Core Features**
 * **🚀 Autonomous Agentic Launch:** Utilizing Four.meme’s "Agentic Mode" to deploy sovereign utility tokens with automated bonding curve management.
 * **🧠 Verifiable Intelligence:** All trading and hedging decisions are routed through the DGrid AI Gateway, ensuring cryptographically verified inference.
-* **🛡️ Permissionless Perp Hedging:** Real-time risk mitigation via MYX V2. Agents autonomously open short positions to hedge treasury value.
+* **🛡️ Permissionless Perp Hedging:** Real-time risk mitigation via MYX V2. Agents autonomously open short positions to hedge treasury value during high volatility.
 * **🆔 Hardware-Anchored Identity:** Execution is bound to secure, hardware-vetted credentials, preventing bot-farm manipulation.
 
 ## **System Architecture**
 
-**[ DGrid AI Gateway ]** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ *(Verifiable Inference)* **[ ALR Logic Engine ]** <─────> **[ National Trust Identity ]** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├───────► **[ Four.meme Bonding Curve ]** *(Token Launch)* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└───────► **[ MYX V2 Perp Engine ]** *(Risk Hedging)* 1. **Inference Layer:** DGrid Gateway fetches multi-model consensus on market risk.
-2. **Logic Layer (ALR):** Evaluates liquidity depth and hardware credentials.
-3. **Execution Layer:** Triggers automated launches or MYX V2 Perp Hedges to maintain the $20,000 TVL threshold.
+```text
+[ DGrid AI Gateway ] ──────► [ ALR Logic Engine ] ◄─────► [ National Trust Identity ]
+                                    │
+                                    ├─────────► [ Four.meme Bonding Curve ]
+                                    │
+                                    └─────────► [ MYX V2 Perp Engine ]
+Inference Layer: DGrid Gateway fetches multi-model consensus on market risk.
 
-## **Quick Start**
+Logic Layer (ALR): Evaluates liquidity depth and hardware credentials.
 
-### **Installation**
-```bash
+Execution Layer: Triggers automated launches or MYX V2 Perp Hedges to maintain liquidity thresholds.
+
+Quick Start
+Installation
 git clone [https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails-ALR-.git](https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails-ALR-.git)
 cd Agentic-Liquidity-Rails-ALR-
 npm install
