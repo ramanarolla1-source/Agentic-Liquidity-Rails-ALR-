@@ -7,39 +7,28 @@
 > **Verifiable, Autonomous Liquidity Infrastructure for the Sovereign Agent Economy.**
 
 ## **Overview**
-**Agentic-Liquidity-Rails (ALR)** is a decentralized execution layer designed for AI agents to autonomously launch tokens, manage liquidity, and hedge market risk without human intervention. By integrating **DGrid’s Proof of Quality (PoQ)** for verifiable inference and **MYX V2’s Permissionless Engine** for perpetual hedging, ALR provides a "National Trust" alternative to centralized, black-box trading bots.
+**Agentic-Liquidity-Rails (ALR)** is a decentralized execution layer designed for AI agents to autonomously launch tokens, manage liquidity, and hedge market risk. By integrating **DGrid’s Proof of Quality (PoQ)** for verifiable inference and **MYX V2’s Permissionless Engine** for perpetual hedging, ALR provides a "National Trust" alternative to centralized, black-box trading bots on the BNB Chain.
 
 ALR is built as a specialized DeFi extension of the **Horizon Sovereign Stack (HSS)**.
 
 ## **Core Features**
 * **🚀 Autonomous Agentic Launch:** Utilizing Four.meme’s "Agentic Mode" to deploy sovereign utility tokens with automated bonding curve management.
-* **🧠 Verifiable Intelligence:** All trading and hedging decisions are routed through the DGrid AI Gateway, ensuring that AI inference is cryptographically verified and untampered.
-* **🛡️ Permissionless Perp Hedging:** Real-time risk mitigation via MYX V2. Agents autonomously open short positions to hedge treasury value during high volatility.
-* **🆔 Hardware-Anchored Identity:** Execution is bound to secure, hardware-vetted credentials, preventing bot-farm manipulation and ensuring "Sovereign" accountability.
+* **🧠 Verifiable Intelligence:** All trading and hedging decisions are routed through the DGrid AI Gateway, ensuring cryptographically verified inference.
+* **🛡️ Permissionless Perp Hedging:** Real-time risk mitigation via MYX V2. Agents autonomously open short positions to hedge treasury value.
+* **🆔 Hardware-Anchored Identity:** Execution is bound to secure, hardware-vetted credentials, preventing bot-farm manipulation.
 
 ## **System Architecture**
 
-```mermaid
-graph TD
-    A[DGrid AI Gateway] -->|Verifiable Inference| B[ALR Logic Engine]
-    B -->|Launch Token| C[Four.meme Bonding Curve]
-    B -->|Hedge Risk| D[MYX V2 Perp Engine]
-    E[National Trust Identity] --- B
-Inference Layer: DGrid Gateway fetches multi-model consensus on market risk.
+**[ DGrid AI Gateway ]** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ *(Verifiable Inference)* **[ ALR Logic Engine ]** <─────> **[ National Trust Identity ]** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├───────► **[ Four.meme Bonding Curve ]** *(Token Launch)* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└───────► **[ MYX V2 Perp Engine ]** *(Risk Hedging)* 1. **Inference Layer:** DGrid Gateway fetches multi-model consensus on market risk.
+2. **Logic Layer (ALR):** Evaluates liquidity depth and hardware credentials.
+3. **Execution Layer:** Triggers automated launches or MYX V2 Perp Hedges to maintain the $20,000 TVL threshold.
 
-Logic Layer (ALR): Evaluates liquidity depth on Four.meme bonding curves.
+## **Quick Start**
 
-Execution Layer: * Normal Ops: Maintains "Sovereign" liquidity rails.
-
-Risk Event: Triggers a MYX V2 Perp Hedge (Short) to protect the $20,000 TVL threshold.
-
-Quick Start
-Prerequisites
-Node.js 20+
-
-BNB Chain Mainnet Account
-
-Installation
+### **Installation**
+```bash
 git clone [https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails-ALR-.git](https://github.com/ramanarolla1-source/Agentic-Liquidity-Rails-ALR-.git)
 cd Agentic-Liquidity-Rails-ALR-
 npm install
@@ -48,8 +37,6 @@ Create a .env file:
 DGRID_API_KEY=your_dgrid_key
 MYX_V2_PRIVATE_KEY=your_wallet_key
 FOUR_MEME_PROXY=0x5c952063c7fc8610FFDB798152D69F0B9550762b
-Run Agentic Launcher
-node scripts/launchHSS.js
 Roadmap & BUIDL Status
 Phase 1: Agentic Mode Token Launch (Four.meme) — [COMPLETED]
 
@@ -58,7 +45,7 @@ Phase 2: DGrid Verifiable Inference Integration — [IN PROGRESS]
 Phase 3: MYX V2 Permissionless Perp Activation — [TARGET: APRIL 29]
 
 License
-Distributed under the Apache License 2.0. See LICENSE for more information.
+Distributed under the Apache License 2.0.
 
-Strategic Note for Judges
+Strategic Note
 ALR solves the "Trust Overhead" in autonomous finance. By anchoring AI decisions in DGrid and risk management in MYX, we move from "Meme-bots" to Sovereign Agentic Infrastructure.
