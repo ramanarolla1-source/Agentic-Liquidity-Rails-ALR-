@@ -47,6 +47,27 @@ Phase 1: Agentic Mode Token Launch (Four.meme) — [COMPLETED]
 Phase 2: DGrid Verifiable Inference Integration — [IN PROGRESS]
 
 Phase 3: MYX V2 Permissionless Perp Activation — [TARGET: APRIL 29]
+⚙️ Configuration & Strategy
+1. Environment Setup
+The ALR agent requires a funded Testnet account to interact with liquidity pools.
+
+Create your .env file:
+cp .env.example .env
+Update the AGENT_MNEMONIC with your Testnet account.
+
+2. Operational Guardrails
+This project implements Agentic Safeguards to prevent catastrophic losses during autonomous liquidity provision:
+
+Slippage Control: The agent will automatically abort transactions if market volatility exceeds the MAX_SLIPPAGE_TOLERANCE.
+
+Depth Verification: The agent checks pool depth via the Algorand Indexer before committing assets.
+
+3. How to Run
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the Liquidity Agent
+python main.py
 
 License
 Distributed under the Apache License 2.0.
